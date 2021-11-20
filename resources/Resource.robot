@@ -3,7 +3,7 @@ Library    SeleniumLibrary
 
 
 *** Variables ***
-${BROWSER}              opera
+${BROWSER}              chrome
 
 *** Keywords ***
 #### Setup e Teardown
