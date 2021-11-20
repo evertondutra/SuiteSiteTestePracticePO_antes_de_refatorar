@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.2 (Python 3.10.0 on win32)" generated="20211120 18:41:05.128" rpa="false" schemaversion="2">
+<suite id="s1" name="TestSitePractice" source="C:\Users\shaaz\OneDrive\Área de Trabalho\SuiteSiteTestePracticePO_antes_de_refatorar\tests\TestSitePractice.robot">
+<test id="s1-t1" name="Caso de Teste com PO 01: Remover Produtos do Carrinho">
+<kw name="Abrir navegador" library="Resource" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20211120 18:41:05.342" level="INFO">Opening browser 'opera' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20211120 18:41:05.342" endtime="20211120 18:41:07.143"/>
+</kw>
+<status status="PASS" starttime="20211120 18:41:05.341" endtime="20211120 18:41:07.144"/>
+</kw>
+<kw name="Acessar a página home do site" library="Home">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${HOME_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20211120 18:41:07.145" level="INFO">Opening url 'http://automationpractice.com'</msg>
+<status status="PASS" starttime="20211120 18:41:07.145" endtime="20211120 18:41:12.943"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${HOME_TPOMENU}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211120 18:41:12.943" endtime="20211120 18:41:12.968"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>${HOME_TITULO}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20211120 18:41:12.973" level="INFO">Page title is 'My Store'.</msg>
+<status status="PASS" starttime="20211120 18:41:12.968" endtime="20211120 18:41:12.973"/>
+</kw>
+<status status="PASS" starttime="20211120 18:41:07.144" endtime="20211120 18:41:12.973"/>
+</kw>
+<kw name="Adicionar o produto &quot;t-shirt&quot; no carrinho" library="Home" sourcename="Adicionar o produto &quot;${PRODUTO}&quot; no carrinho">
+<kw name="Digitar o nome do produto &quot;${PRODUTO}&quot; no campo de pesquisa" library="Home" sourcename="Digitar o nome do produto &quot;${PRODUTO}&quot; no campo de pesquisa">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${HOME_FIELD_PESQUISAR}</arg>
+<arg>${PRODUTO}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211120 18:41:12.975" level="INFO">Typing text 't-shirt' into text field 'name=search_query'.</msg>
+<status status="PASS" starttime="20211120 18:41:12.974" endtime="20211120 18:41:13.056"/>
+</kw>
+<status status="PASS" starttime="20211120 18:41:12.974" endtime="20211120 18:41:13.056"/>
+</kw>
+<kw name="Clicar no botão pesquisar" library="Home">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${HOME_BTN_PESQUISAR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211120 18:41:13.056" level="INFO">Clicking element 'name=submit_search'.</msg>
+<status status="PASS" starttime="20211120 18:41:13.056" endtime="20211120 18:41:14.368"/>
+</kw>
+<status status="PASS" starttime="20211120 18:41:13.056" endtime="20211120 18:41:14.368"/>
+</kw>
+<kw name="Clicar no botão &quot;Add to Cart&quot; do produto" library="Home">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${HOME_PRODUCT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211120 18:41:14.369" endtime="20211120 18:41:14.389"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${HOME_PRODUCT}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211120 18:41:14.389" level="INFO">Clicking element 'xpath=//*[@id="center_column"]//img[@alt="Faded Short Sleeve T-shirts"]'.</msg>
+<status status="PASS" starttime="20211120 18:41:14.389" endtime="20211120 18:41:16.121"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${HOME_BTN_ADDCARD}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211120 18:41:16.121" endtime="20211120 18:41:16.142"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${HOME_BTN_ADDCARD}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20211120 18:41:16.142" level="INFO">Clicking button 'xpath=//*[@id="add_to_cart"]/button'.</msg>
+<status status="PASS" starttime="20211120 18:41:16.142" endtime="20211120 18:41:16.199"/>
+</kw>
+<status status="PASS" starttime="20211120 18:41:14.368" endtime="20211120 18:41:16.199"/>
+</kw>
+<kw name="Clicar no botão &quot;Proceed to checkout&quot;" library="Home">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${HOME_BTN_CHECKOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211120 18:41:16.200" endtime="20211120 18:41:17.101"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${HOME_BTN_CHECKOUT}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211120 18:41:17.101" level="INFO">Clicking element 'xpath=//*[@id="layer_cart"]//a[@title="Proceed to checkout"]'.</msg>
+<status status="PASS" starttime="20211120 18:41:17.101" endtime="20211120 18:41:18.375"/>
+</kw>
+<status status="PASS" starttime="20211120 18:41:16.199" endtime="20211120 18:41:18.375"/>
+</kw>
+<status status="PASS" starttime="20211120 18:41:12.973" endtime="20211120 18:41:18.375"/>
+</kw>
+<kw name="Excluir o produto do carrinho" library="Carrinho">
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>${CARRINHO_TITLE}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20211120 18:41:18.384" level="INFO">Page title is 'Order - My Store'.</msg>
+<status status="PASS" starttime="20211120 18:41:18.376" endtime="20211120 18:41:18.384"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${CARRINHO_DELETAR}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211120 18:41:18.384" endtime="20211120 18:41:18.406"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CARRINHO_DELETAR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211120 18:41:18.406" level="INFO">Clicking element 'xpath=//*[@class="cart_quantity_delete"]'.</msg>
+<status status="PASS" starttime="20211120 18:41:18.406" endtime="20211120 18:41:18.456"/>
+</kw>
+<status status="PASS" starttime="20211120 18:41:18.376" endtime="20211120 18:41:18.456"/>
+</kw>
+<kw name="Conferir se o carrinho fica vazio" library="Carrinho">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${CARRINHO_MSG}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211120 18:41:18.457" endtime="20211120 18:41:19.869"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${CARRINHO_MSG}</arg>
+<arg>Your shopping cart is empty.</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20211120 18:41:19.869" level="INFO">Verifying element 'xpath=//*[@id="center_column"]/p[@class='alert alert-warning']' contains exact text 'Your shopping cart is empty.'.</msg>
+<status status="PASS" starttime="20211120 18:41:19.869" endtime="20211120 18:41:19.886"/>
+</kw>
+<status status="PASS" starttime="20211120 18:41:18.456" endtime="20211120 18:41:19.886"/>
+</kw>
+<kw name="Fechar navegador" library="Resource" type="TEARDOWN">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211120 18:41:19.971" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211120 18:41:19.887" endtime="20211120 18:41:19.971"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20211120 18:41:19.972" endtime="20211120 18:41:22.177"/>
+</kw>
+<status status="PASS" starttime="20211120 18:41:19.887" endtime="20211120 18:41:22.177"/>
+</kw>
+<status status="PASS" starttime="20211120 18:41:05.340" endtime="20211120 18:41:22.178"/>
+</test>
+<status status="PASS" starttime="20211120 18:41:05.130" endtime="20211120 18:41:22.180"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="TestSitePractice">TestSitePractice</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20211120 18:41:05.338" level="ERROR">Error in file 'C:\Users\shaaz\OneDrive\Área de Trabalho\SuiteSiteTestePracticePO_antes_de_refatorar\tests\TestSitePractice.robot' on line 7: Resource file '..\resources\resourcePO\My_Account.robot' does not exist.</msg>
+</errors>
+</robot>
